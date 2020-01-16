@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spritechanger : MonoBehaviour
+public class SpriteChanger: MonoBehaviour
 {
     // Start is called before the first frame update
     private SpriteRenderer spriteRenderer;
