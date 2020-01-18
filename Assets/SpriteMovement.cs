@@ -1,27 +1,24 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteMovement : MonoBehaviour
 {
-    private float moveSpeed; 
-    private float rotateSpeed;
+    public Transform tf;
+    public float speed = 1.0f;
 
-    // Start is called before the first frame update
-    private class Pawn
-    {
-        private float movespeed = 10f;
-        private float rotatespeed = 90f;
-
-
-    }
+}     
     void Start()
     {
-        
+    tf = gameObject.Getcomponent<Transform>();
     }
     void Update()
     {
-        transform.Translate(-Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        transform.Rotate(-Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+    //move up if the player presses up
+    if (Input.Getkey(KeyCode.UpArrow))
+    { 
+        tf.postion = tf.postion + Vector3.up + Time.deltatime * speed;
+    }
+
     }
 }
