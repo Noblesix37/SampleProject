@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class SpriteMovement : MonoBehaviour
 {
-    public Transform tf;
-    public float speed = 1.0f;
+    public float speed = 100;
+    public Transform obj;
 
 }     
     void Start()
     {
-    tf = gameObject.Getcomponent<Transform>();
+    
     }
     void Update()
     {
-    //move up if the player presses up
-    if (Input.Getkey(KeyCode.UpArrow))
-    { 
-        tf.postion = tf.postion + Vector3.up + Time.deltatime * speed;
-    }
+    float h = Input.GetAxis("Horizontal");
+    float v = Input.GetAxis("Vertical");
 
-    }
+    Vector3 tempVect = new Vector3(h, v, 0);
+    tempVect = tempVect.normalized * speed * Time.deltaTime;
+
+    obj.transform.position += tempVect;
 }
