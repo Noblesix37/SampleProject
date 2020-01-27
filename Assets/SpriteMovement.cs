@@ -21,7 +21,7 @@ public class SpriteMovement : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(-Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        transform.Rotate(-Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+        //transform.Translate(-Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+        //transform.Rotate(-Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
     }
 }
