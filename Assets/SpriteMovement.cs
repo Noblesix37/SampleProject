@@ -1,27 +1,24 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteMovement : MonoBehaviour
 {
-    private float moveSpeed; 
-    private float rotateSpeed;
+    public float speed = 100;
+    public Transform obj;
 
-    // Start is called before the first frame update
-    private class Pawn
-    {
-        private float movespeed = 10f;
-        private float rotatespeed = 90f;
-
-
-    }
+}     
     void Start()
     {
-        
+    
     }
     void Update()
     {
-        //transform.Translate(-Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        //transform.Rotate(-Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
-    }
+    float h = Input.GetAxis("Horizontal");
+    float v = Input.GetAxis("Vertical");
+
+    Vector3 tempVect = new Vector3(h, v, 0);
+    tempVect = tempVect.normalized * speed * Time.deltaTime;
+
+    obj.transform.position += tempVect;
 }
