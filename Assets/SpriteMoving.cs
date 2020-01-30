@@ -37,5 +37,10 @@ public class SpriteMoving : MonoBehaviour
         {
             tf.position -= tf.right * movementSpeed * Time.deltaTime;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
