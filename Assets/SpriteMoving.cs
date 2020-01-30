@@ -5,7 +5,6 @@ public class SpriteMoving : MonoBehaviour
 {
     private Transform tf;
 
-    public float rotationSpeed = 1.0f;
 
     public float movementSpeed = 1.0f;
 
